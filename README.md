@@ -111,6 +111,9 @@ Developed using Flutter, Dart, Oracle Autonomous Database, and Oracle APEX REST 
  - Add or delete users
 <img width="500" height="1000" alt="Screenshot_2026-06-04-00-51-26-82_6c7c709e96bff5c0b1bd62e76de66eab" src="https://github.com/user-attachments/assets/098e3678-9287-45a0-bea2-7cba429172b7" />
 
+- Add Transaction Screen
+<img width="500" height="1000" alt="Screenshot_2026-06-04-00-52-17-57_6c7c709e96bff5c0b1bd62e76de66eab" src="https://github.com/user-attachments/assets/05326422-06a9-4893-8d38-1f4d3c2d342c" />
+
  - days
 <img width="500" height="1000" alt="Screenshot_2026-06-04-00-52-41-09_6c7c709e96bff5c0b1bd62e76de66eab" src="https://github.com/user-attachments/assets/860fd309-74fa-4272-8a49-a5234cb18bee" />
 
@@ -120,6 +123,6 @@ Developed using Flutter, Dart, Oracle Autonomous Database, and Oracle APEX REST 
  - Daily Income Summary
 <img width="500" height="1000" alt="Screenshot_2026-06-04-00-52-50-76_6c7c709e96bff5c0b1bd62e76de66eab" src="https://github.com/user-attachments/assets/cc5ec13f-5442-4331-9249-9626215a410a" />
 
-<img width="500" height="1000" alt="Screenshot_2026-06-04-00-52-17-57_6c7c709e96bff5c0b1bd62e76de66eab" src="https://github.com/user-attachments/assets/05326422-06a9-4893-8d38-1f4d3c2d342c" />
+
 
 
