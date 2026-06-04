@@ -108,7 +108,7 @@ Developed using Flutter, Dart, Oracle Autonomous Database, and Oracle APEX REST 
  - Login Screen
 <img width="500" height="1000" alt="Screenshot_2026-06-04-00-49-50-97_6c7c709e96bff5c0b1bd62e76de66eab" src="https://github.com/user-attachments/assets/a6e3e344-f0d7-4695-b9aa-45a9d98789bd" />
 
- - Add Transaction Screen
+ - Add or delete users
 <img width="500" height="1000" alt="Screenshot_2026-06-04-00-51-26-82_6c7c709e96bff5c0b1bd62e76de66eab" src="https://github.com/user-attachments/assets/098e3678-9287-45a0-bea2-7cba429172b7" />
 
  - days
