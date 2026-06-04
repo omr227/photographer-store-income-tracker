@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:md_store/AdminPage.dart';
 import 'package:md_store/userTransactions.dart';
 
 class Total {
@@ -53,21 +54,17 @@ class _DayDetailsPageState extends State<DayDetailsPage> {
   @override
   void initState() {
     super.initState();
+    print("Loading totals for date in initState: ${widget.date}");
     loadTotals();
   }
   bool isloading=false;
   Future<void> loadTotals() async {
-     setState(() {
-      isloading=true;
-    });
-    setState(() {
-      isloading=true;
-    });
+    load(true);
     totals.clear();
 
     const headers = {'Authorization': 'Basic TURfU1RPUkU6T21hciMyMjIyMDcj'};
 
-    try {
+   // try {
      
         final response = await http.get(
           Uri.parse(
@@ -78,23 +75,44 @@ class _DayDetailsPageState extends State<DayDetailsPage> {
 
         if (response.statusCode == 200) {
           final items = jsonDecode(response.body)['items'] as List<dynamic>;
+          if(items[0]['teuro']==null){
+            if (kDebugMode) {
+              debugPrint("teuro is null");
+            }
+             Navigator.pop(
+                context,
+              );
+          }else{
           final parsed = items.map((e) => Total.fromJson(e)).toList();
+          if(parsed.isEmpty){
+            if (kDebugMode) {
+              debugPrint("Iam empty");
+            }
+          }else{
           parsed.forEach((total) {
             totals.add(total.teuro);
             totals.add(total.tus);
             totals.add(total.tpound);
             totals.add(total.tvisa);
             totals.add(total.tdresses);
-          });
+          });}
+         load(false);
         }
+        }
+       
+        /*
           } catch (e) {
       if (kDebugMode) debugPrint("Totals error: $e");
+      
     }
-     setState(() {
-      isloading=false;
-    });
+    */
   }
-
+void  load(bool loading) {
+   if (!mounted) return;
+   setState(() {
+        isloading=loading;
+      });
+}
   @override
   Widget build(BuildContext context) {
     final icons = [
@@ -165,14 +183,14 @@ class _DayDetailsPageState extends State<DayDetailsPage> {
         bottomNavigationBar: Padding(
           padding: const EdgeInsets.all(12),
           child: ElevatedButton.icon(
-            onPressed: () {
+            onPressed: () async {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (_) => UserTransactionPage(date: widget.date),
                   maintainState:false,
                 ),
-              ).then((_) => loadTotals());
+              );
             },
             icon: const Icon(Icons.list, color: Colors.black),
             label: const Text(

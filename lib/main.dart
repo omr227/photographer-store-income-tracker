@@ -143,8 +143,8 @@ class _LoginPageState extends State<LoginPage> {
         _errorColor = Colors.red;
       });
        ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text("Wrong Password"))
-    );
+      SnackBar(content: Text("Wrong Password",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold)),
+       ));
       if (kDebugMode) debugPrint("Wrong password");
     }
   }

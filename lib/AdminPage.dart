@@ -345,8 +345,9 @@ if(passwordController.text.isEmpty||usernameController.text.isEmpty){
                                 context,
                                 MaterialPageRoute(
                                   builder: (_) => DayDetailsPage(date: d),
-                                ),
-                              ),
+                                  maintainState: false,
+                                )
+                              ).then((_) => _loadDates()), // Refresh on return,
                             ),
                           );
                         },
